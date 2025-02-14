@@ -3,16 +3,13 @@ public class LinkedList {
     class Node {
         int data;
         Node next;
-
 public Node(int data) {
 this.data = data;
 this.next = null;
         }
     }
-
     Node head = null;
     Node tail = null;
-
     public void addNode(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -25,7 +22,6 @@ tail.next = newNode;
 tail = newNode;
         }
     }
-
 public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
@@ -66,9 +62,20 @@ public static void main(String[] args) {
             }
            }
     }
-public void insertBegin() 
-    {    
-        // TYPE YOUR CODE HERE   
+public void insertBegin(int data) 
+    {  
+
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+
+    System.out.println("Element Inserted");
+        }    
     } 
 public void displayList() {
         Node current = head;
